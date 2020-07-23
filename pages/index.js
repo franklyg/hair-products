@@ -34,7 +34,7 @@ class ProductCard extends React.Component{
       const indexPageItems = document.allPosts[0].node.body.map(function(slice, index){
 
         // Product Card
-        if (slice.__typename === 'Index_pageBodyProduct_card') {
+        if (slice.__typename === 'Index_pagBodyProduct_card') {
           const productCardItem = [slice].map(function(productRow, productRowIndex){
 
             return(
@@ -81,7 +81,7 @@ class ProductCard extends React.Component{
           return productCardItem;
 
           // Product Specific
-        } else if(slice.__typename === 'Index_pageBodyProduct_page_specific_link') {
+        } else if(slice.__typename === 'Index_pagBodyProduct_page_specific_link') {
             const productSpecificItem = slice.fields.map(function(pageSpecific, pageSpecificIndex){
               return (
                 <LazyLoad key={pageSpecificIndex} height={200} offset={100}>
@@ -113,7 +113,7 @@ class ProductCard extends React.Component{
             return productSpecificItem;
 
             // Product Title
-          } else if(slice.__typename === 'Index_pageBodyPage_title') {
+          } else if(slice.__typename === 'Index_pagBodyPage_title') {
 
             const pageTitleItem = slice.fields.map(function(pageTitle, pageTitleIndex){
               return (
@@ -126,7 +126,7 @@ class ProductCard extends React.Component{
             return pageTitleItem;
 
             // Online Advert
-          }else if(slice.__typename === 'Index_pageBodyOnline_advert') {
+          }else if(slice.__typename === 'Index_pagBodyOnline_advert') {
             const onlineAdvert = slice.fields.map(function(advertElem, advertElemIndex){
               return (
                 <LazyLoad key={advertElemIndex} height={200} offset={100, 0}>
